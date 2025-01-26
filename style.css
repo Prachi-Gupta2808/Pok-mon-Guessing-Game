@@ -1,0 +1,184 @@
+
+  body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    margin-top: -30px;
+    position: relative;
+    overflow: hidden; /* Prevents any overflow if content exceeds viewport */
+  }
+  
+  body::before {
+    content: '';
+    position: fixed; /* Keeps the background fixed within the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('pokemon.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    z-index: -1; /* Keeps the image behind the content */
+  }
+  
+  
+  
+  .heading{
+    color:rgb(135, 55, 6);
+    font-size: 30px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  .pokemon-card {
+    width: 350px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    margin-bottom: 20px; /* Add space below the card */
+  }
+
+  .pokemon-card:hover {
+    transform: scale(1.05);
+  }
+
+  .pokemon-image {
+    width: 100%;
+    height: 250px; /* Set a fixed height */
+    background-color: #ffffff;
+    transition: filter 0.5s ease-in-out;
+    filter: blur(5px);
+    object-fit: contain; /* Ensure the image fits within the container */
+    align-items: center;
+  }
+
+  .pokemon-info {
+    padding: 30px;
+  }
+
+  .pokemon-name,
+  .pokemon-type,
+  .pokemon-id {
+    display: none;
+  }
+
+  .result-message {
+    font-size: 20px;
+    margin-top: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 300;
+  }
+
+  input {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+  }
+
+  #guessInput {
+    font-family: 'Arial', sans-serif; /* Change this to any font family you prefer */
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #e45656;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .score{
+    font-size: 20px;
+  }
+
+  button:hover {
+    background-color: #e61f1f;
+  }
+
+  /* Loading Spinner */
+  .loader {
+    position: absolute;
+    top: 300px; /* Adjust this value to center the loader vertically within the image area */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 64px;
+    display: none;
+  }
+
+  .inner {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .inner.one {
+    left: 0%;
+    top: 0%;
+    animation: rotate-one 2s linear infinite;
+    border-bottom: 3px solid #737381;
+  }
+
+  .inner.two {
+    right: 0%;
+    top: 0%;
+    animation: rotate-two 2s linear infinite;
+    border-right: 3px solid #737381;
+  }
+
+  .inner.three {
+    right: 0%;
+    bottom: 0%;
+    animation: rotate-three 2s linear infinite;
+    border-top: 3px solid #737381;
+  }
+
+  @keyframes rotate-one {
+    0% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotate-two {
+    0% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotate-three {
+    0% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+  }
+
+
+
+
